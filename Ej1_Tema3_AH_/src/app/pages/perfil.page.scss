@@ -1,0 +1,32 @@
+/* Estado base del botón: borde visible y ligera sombra */
+.save-btn {
+  --border-width: 2px;
+  --border-style: solid;
+  --border-color: var(--ion-color-primary);
+  --background: transparent;
+  --color: var(--ion-color-primary);
+
+  /* relieve suave */
+  box-shadow: 0 2px 0 rgba(0,0,0,.08), 0 6px 12px rgba(0,0,0,.06);
+  transition: transform .12s ease, box-shadow .2s ease, background-color .2s ease;
+}
+
+/* Al hacer hover/press, un pequeño “press effect” */
+.save-btn:active {
+  transform: translateY(1px);
+  box-shadow: 0 1px 0 rgba(0,0,0,.08), 0 4px 8px rgba(0,0,0,.08);
+}
+
+/* Estado “pop” temporal tras guardar */
+.btn-pop {
+  /* color success sólido y borde a juego */
+  --background: var(--ion-color-success);
+  --color: var(--ion-color-success-contrast);
+  --border-color: color-mix(in oklab, var(--ion-color-success), #064e3b 40%);
+
+  /* más relieve y un sutil levantado */
+  transform: translateY(-1px);
+  box-shadow:
+    0 4px 0 color-mix(in oklab, var(--ion-color-success), #065f46 50%),
+    0 10px 20px rgba(16, 185, 129, .28);
+}

@@ -1,0 +1,47 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>Cádiz</ion-title>
+    <ion-buttons slot="end">
+      <ion-button routerLink="/list/servicios">Servicios</ion-button>
+      <ion-button routerLink="/list/restaurantes">Restaurantes</ion-button>
+      <ion-button routerLink="/list/hoteles">Hoteles</ion-button>
+      <ion-button routerLink="/list/clinicas">Clinicas</ion-button>
+      <ion-button routerLink="/list/perfil">Perfil</ion-button>
+      <ion-button routerLink="/list/datos">Datos</ion-button>
+
+      <ion-button routerLink="/cliente">Cliente</ion-button>
+      <ion-button routerLink="/datoscliente">Datos Cliente</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <ion-router-outlet></ion-router-outlet>
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+    <div class="controls-row">
+      <ion-input type="number" [(ngModel)]="valor1" placeholder="Valor 1"></ion-input>
+      <ion-input type="number" [(ngModel)]="valor2" placeholder="Valor 2"></ion-input>
+      <ion-select [(ngModel)]="operacion" placeholder="Operación">
+        <ion-select-option value="+">+</ion-select-option>
+        <ion-select-option value="-">-</ion-select-option>
+        <ion-select-option value="*">*</ion-select-option>
+        <ion-select-option value="/">/</ion-select-option>
+      </ion-select>
+      <ion-button expand="block" (click)="calcular()">Calcular</ion-button>
+      <span *ngIf="resultado">{{ resultado }}</span>
+      <ion-button size="small" (click)="incrementFromParent()">Incrementar</ion-button>
+      <span *ngIf="milestoneMsg">{{ milestoneMsg }}</span>
+    </div>
+    <app-counter [count]="parentCount" (milestone)="onMilestoneReached($event)"></app-counter>
+    <app-calculadora
+      [valor1]="valor1"
+      [valor2]="valor2"
+      [operacion]="operacion"
+      [trigger]="trigger"
+      (resultado)="manejarResultado($event)">
+    </app-calculadora>
+  </ion-toolbar>
+</ion-footer>

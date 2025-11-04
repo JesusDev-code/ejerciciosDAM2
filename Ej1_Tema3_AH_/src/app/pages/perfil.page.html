@@ -1,0 +1,82 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>Perfil (formulario)</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <form #f="ngForm" (ngSubmit)="guardar(f)" novalidate>
+    <ion-list>
+      <ion-item>
+        <ion-label position="floating">Nombre *</ion-label>
+        <ion-input name="nombre" [(ngModel)]="model.nombre" required minlength="2"></ion-input>
+      </ion-item>
+      <ion-note color="danger" *ngIf="f.submitted && f.controls['nombre']?.invalid">
+        Nombre obligatorio (mín. 2).
+      </ion-note>
+
+      <ion-item class="ion-margin-top">
+        <ion-label position="floating">Apellidos *</ion-label>
+        <ion-input name="apellidos" [(ngModel)]="model.apellidos" required></ion-input>
+      </ion-item>
+      <ion-note color="danger" *ngIf="f.submitted && f.controls['apellidos']?.invalid">
+        Apellidos obligatorios.
+      </ion-note>
+
+      <ion-item class="ion-margin-top">
+        <ion-label position="floating">Domicilio</ion-label>
+        <ion-input name="domicilio" [(ngModel)]="model.domicilio"></ion-input>
+      </ion-item>
+
+      <ion-item class="ion-margin-top">
+        <ion-label position="floating">Edad</ion-label>
+        <ion-input type="number" min="0" max="120" name="edad" [(ngModel)]="model.edad"></ion-input>
+      </ion-item>
+
+      <ion-item class="ion-margin-top">
+        <ion-label position="floating">Curso</ion-label>
+        <ion-input name="curso" [(ngModel)]="model.curso"></ion-input>
+      </ion-item>
+
+       <!-- Email (requerido + formato) -->
+  <ion-item class="ion-margin-top">
+    <ion-label position="floating">Email *</ion-label>
+    <!-- #emailCtrl nos da el estado de este control -->
+    <ion-input
+      name="email"
+      type="email"
+      [(ngModel)]="model.email"
+      required
+      email
+      #emailCtrl="ngModel">
+    </ion-input>
+  </ion-item>
+
+  <!-- Mensajes de validación para Email -->
+  <ion-note color="danger"
+            *ngIf="(f.submitted || emailCtrl.touched) && emailCtrl.invalid">
+    <ng-container *ngIf="emailCtrl.errors?.['required']">
+      El email es obligatorio.
+    </ng-container>
+    <ng-container *ngIf="emailCtrl.errors?.['email']">
+      El formato del email no es válido (ej.: usuario@dominio.com).
+    </ng-container>
+  </ion-note>
+
+      <ion-item class="ion-margin-top">
+        <ion-label position="floating">Password *</ion-label>
+        <ion-input type="password" name="password" [(ngModel)]="model.password" required minlength="6"></ion-input>
+      </ion-item>
+    </ion-list>
+
+    <!-- Botón con feedback: cambia color, borde y relieve -->
+    <!-- Botón Guardar -->
+  <ion-button expand="block" class="save-btn"
+              [class.btn-pop]="feedbackActive"
+              [fill]="feedbackActive ? 'solid' : 'outline'"
+              [color]="feedbackActive ? 'success' : 'primary'"
+              type="submit">
+    {{ feedbackActive ? '¡Guardado!' : 'Guardar' }}
+  </ion-button>
+  </form>
+</ion-content>

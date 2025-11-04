@@ -1,0 +1,20 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Clientes guardados</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="ion-padding">
+  <ion-list *ngIf="clientes.length">
+    <ion-item *ngFor="let cliente of clientes">
+      <ion-label>
+        <strong>{{ cliente.nombre }} {{ cliente.apellido }}</strong><br>
+        Email: {{ cliente.email }}<br>
+        Nacionalidad: {{ cliente.nacionalidad }}
+      </ion-label>
+    </ion-item>
+  </ion-list>
+  <div *ngIf="!clientes.length">
+    No hay clientes guardados.
+  </div>
+</ion-content>

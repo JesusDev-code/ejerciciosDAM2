@@ -1,0 +1,85 @@
+#container {
+  text-align: center;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+#container strong {
+  font-size: 20px;
+  line-height: 26px;
+}
+
+#container p {
+  font-size: 16px;
+  line-height: 22px;
+  color: #8c8c8c;
+  margin: 0;
+}
+
+#container a {
+  text-decoration: none;
+}
+
+.home-controls {
+  margin-top: 8px;
+  width: calc(100% - 32px);
+  left: 16px;
+  right: 16px;
+}
+
+/* ------- CALCULADORA EN LÍNEA --------- */
+.controls-row {
+  display: flex;
+  flex-direction: row;
+  gap: 6px;
+  align-items: center;
+  flex-wrap: nowrap;
+  justify-content: center;
+  padding-bottom: 4px;
+  width: 100%;
+}
+
+/* Forzar tamaño mínimo/máximo y evitar saltos */
+.controls-row ion-input,
+.controls-row ion-select,
+.controls-row ion-button {
+  font-size: 13px !important;
+  min-width: 48px !important;
+  max-width: 65px !important;
+  height: 29px !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  box-sizing: border-box !important;
+}
+
+.controls-row ion-select {
+  min-width: 42px !important;
+  max-width: 55px !important;
+  font-size: 17px !important;
+}
+
+.controls-row span {
+  font-size: 14px;
+  font-weight: 600;
+  margin-left: 3px;
+  white-space: nowrap;
+}
+
+.controls-row ion-button[size="small"] {
+  padding-inline: 6px;
+  height: 29px;
+  font-size: 12px;
+  width: auto;
+}
+
+.controls-row ion-button[expand="block"] {
+  min-width: 56px;
+  max-width: 72px;
+}
+
+.milestone {
+  font-weight: 600;
+}
