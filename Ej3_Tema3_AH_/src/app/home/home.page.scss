@@ -1,0 +1,160 @@
+:host {
+  --ion-color-primary: #4b65ee;
+  --ion-color-tertiary: #8f53ec;
+  --ion-background-color: #f9fafe;
+  --ion-color-step-950: #222a48;
+}
+
+ion-content.custom-bg {
+  background: linear-gradient(110deg, #f9fafe 80%, #e7eafc 100%);
+  min-height: 100vh;
+}
+
+
+.main-title {
+  margin-top: 1.5em;
+  margin-bottom: 1em;
+  text-align: center;
+}
+
+.main-title h2 {
+  font-weight: 700;
+  color: #222a48 !important;
+  margin-bottom: 0.25em;
+  font-size: 1.6em;
+}
+
+.main-title p {
+  color: #565b7c !important;
+  font-size: 1.1em;
+  margin-bottom: 1.5em;
+}
+
+ion-card.card-elevated {
+  box-shadow: 0 8px 32px 0 rgba(75, 101, 238, 0.15);
+  border-radius: 20px;
+  margin-top: 1em;
+  margin-bottom: 1.5em;
+  color: #222a48 !important;
+}
+
+.gradient-btn {
+  background: linear-gradient(135deg, #a8c7fa 0%, #c5dbff 100%) !important;
+  color: #1a3d7c !important;
+  font-weight: 700;
+  font-size: 1.05em;
+  border-radius: 14px;
+  height: 52px;
+  margin-top: 0.5em;
+  margin-bottom: 1.5em;
+  box-shadow: 0 4px 16px 0 rgba(75, 101, 238, 0.25);
+  letter-spacing: 0.03em;
+  text-transform: none;
+  --background: linear-gradient(135deg, #a8c7fa 0%, #c5dbff 100%);
+  --color: #1a3d7c;
+}
+
+.gradient-btn ion-icon {
+  font-size: 1.3em;
+  margin-right: 0.4em;
+}
+
+
+.coords-box {
+  margin-top: 1.5em;
+  text-align: center;
+}
+
+ion-chip[color="success"] {
+  --background: #d4e4ff;
+  --color: #1a3d7c;
+  font-weight: 600;
+  font-size: 1.06em;
+  padding: 0.8em 1.2em;
+}
+
+.coords-box ion-label {
+  color: #1a3d7c !important;
+}
+
+
+ion-card-title {
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5em;
+  color: #222a48 !important;
+}
+
+ion-card-subtitle {
+  color: #565b7c !important;
+  text-align: center;
+}
+
+.alert-box {
+  color: #d93251 !important;
+  display: flex;
+  align-items: flex-start;
+  gap: 1em;
+  background: #fbe9ea;
+  border-radius: 10px;
+  padding: 0.8em 1em;
+  margin: 0 0 1em 0;
+}
+
+.alert-box ion-icon {
+  font-size: 2em;
+  flex-shrink: 0;
+}
+
+.alert-box b {
+  display: block;
+  margin-bottom: 0.3em;
+}
+
+ion-text[color="danger"] p {
+  font-size: 0.95em;
+  margin-top: 1em;
+  color: #d93251 !important;
+  text-align: center;
+}
+
+
+.low-note {
+  text-align: center;
+  color: #565b7c !important;
+  margin: 1.5em 0 1em 0;
+  padding: 0 1em;
+}
+
+ion-header {
+  padding-top: env(safe-area-inset-top);
+}
+
+.custom-toolbar {
+  --background: #fff;
+  --color: #222a48;
+  box-shadow: 0 2px 12px rgba(75, 101, 238, 0.10);
+  border-bottom: 1px solid #eee;
+  padding-top: env(safe-area-inset-top);
+}
+
+.geo-title {
+  color: #222a48 !important;
+  font-size: 1.5em;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 56px;
+  padding-top: 0.5em;
+}
+
+.geo-title ion-icon {
+  font-size: 1.5em !important;
+  margin-right: 0.4em;
+  color: #4b65ee !important;
+}

@@ -1,0 +1,61 @@
+<ion-header>
+  <ion-toolbar class="custom-toolbar">
+    <ion-title class="geo-title">
+      <ion-icon name="navigate"></ion-icon>
+      GeoTracker
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="custom-bg">
+  <div class="ion-padding">
+    <div class="main-title">
+      <h2>Conecta con tu entorno en tiempo real.</h2>
+      <p>Descubre tu ubicación exacta utilizando la tecnología GPS de tu dispositivo.</p>
+    </div>
+
+    <ion-card class="card-elevated">
+      <ion-text color="danger" *ngIf="permissionDenied">
+        <div class="alert-box">
+          <ion-icon name="shield-half-outline"></ion-icon>
+          <div>
+            <b>Permisos denegados</b>
+            <p>Necesitas habilitar los permisos de ubicación en la configuración de tu dispositivo.</p>
+          </div>
+        </div>
+      </ion-text>
+
+      <ion-card-header>
+        <ion-card-title>
+          <ion-icon name="pin"></ion-icon> Control de Ubicación
+        </ion-card-title>
+        <ion-card-subtitle>Activa el seguimiento GPS en tiempo real</ion-card-subtitle>
+      </ion-card-header>
+
+      <ion-card-content>
+        <ion-button expand="block" class="gradient-btn" (click)="updateLocation()">
+          <ion-icon slot="start" [name]="isRealtime ? 'stop-circle' : 'locate'"></ion-icon>
+          {{ isRealtime ? 'Detener GPS' : 'Acceder a tu ubicación' }}
+        </ion-button>
+
+        <div *ngIf="location" class="coords-box">
+          <ion-chip color="success" class="coord-chip">
+            <ion-icon name="navigate"></ion-icon>
+            <ion-label>
+              <b>Latitud:</b> {{location.latitude | number:'1.6-6'}} <br>
+              <b>Longitud:</b> {{location.longitude | number:'1.6-6'}}
+            </ion-label>
+          </ion-chip>
+        </div>
+
+        <ion-text color="danger" *ngIf="permissionDenied && !location">
+          <p class="permission-text">Permiso de ubicación denegado. Por favor, habilita el acceso en la configuración.</p>
+        </ion-text>
+      </ion-card-content>
+    </ion-card>
+
+    <footer class="low-note">
+      <small>Esta aplicación utiliza la API de Geolocalización del navegador para obtener tu posición GPS.</small>
+    </footer>
+  </div>
+</ion-content>

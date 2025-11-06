@@ -1,0 +1,7 @@
+{
+  "name": "GeoTracker",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular-standalone"
+}
