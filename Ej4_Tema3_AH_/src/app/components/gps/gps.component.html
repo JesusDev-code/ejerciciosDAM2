@@ -1,0 +1,14 @@
+<ion-card>
+  <ion-card-content>
+    <ion-button expand="block" color="primary" (click)="getCoordenadas()">
+      <ion-icon name="location-outline" slot="start"></ion-icon>
+      Mostrar coordenadas GPS
+    </ion-button>
+
+    <div *ngIf="coordenadasVisibles" class="coords-box">
+      <strong>Coordenadas GPS</strong><br>
+      Latitud: {{ lat | number:'1.4-4' }}<br>
+      Longitud: {{ lng | number:'1.4-4' }}
+    </div>
+  </ion-card-content>
+</ion-card>
