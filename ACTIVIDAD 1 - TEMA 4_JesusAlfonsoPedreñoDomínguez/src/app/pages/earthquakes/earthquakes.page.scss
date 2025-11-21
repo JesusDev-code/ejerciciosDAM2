@@ -1,0 +1,67 @@
+.earth-container {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
+}
+
+.earth-image {
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+  border-radius: 50%;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+  animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+.action-button {
+  margin: 20px 0;
+  --box-shadow: 0 4px 12px rgba(var(--ion-color-primary-rgb), 0.4);
+}
+
+.earthquake-card {
+  margin-top: 20px;
+  border-left: 4px solid var(--ion-color-danger);
+  
+  ion-card-title {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: var(--ion-color-danger);
+  }
+
+  ion-item {
+    --background: transparent;
+    
+    h3 {
+      font-weight: 600;
+      margin-bottom: 4px;
+    }
+
+    p {
+      font-size: 0.9rem;
+      color: var(--ion-color-medium);
+    }
+  }
+}
+
+.empty-state {
+  margin-top: 40px;
+  background: var(--ion-color-light);
+
+  ion-icon {
+    margin-bottom: 16px;
+  }
+
+  p {
+    color: var(--ion-color-medium);
+    font-size: 0.95rem;
+  }
+}
