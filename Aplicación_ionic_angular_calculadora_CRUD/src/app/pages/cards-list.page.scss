@@ -1,0 +1,30 @@
+/* Contenedor del visual superior de la card */
+.media {
+  width: 70%;
+  height: 200px;          /* ↓ tamaño reducido */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+/* Imagen recortada a alto fijo */
+.media ion-img, .media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Icono grande pero contenido */
+.media ion-icon {
+  font-size: 56px;        /* tamaño adecuado para la card */
+  opacity: 0.9;
+}
+
+.media ion-icon {
+  font-size: 48px;   
+  color: var(--ion-color-primary);
+  opacity: 1;
+}
+
+

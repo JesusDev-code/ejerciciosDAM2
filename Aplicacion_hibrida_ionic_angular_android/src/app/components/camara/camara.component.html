@@ -1,0 +1,12 @@
+<ion-card>
+  <ion-card-content>
+    <ion-button expand="block" color="secondary" (click)="tomarFoto()">
+      <ion-icon name="camera-outline" slot="start"></ion-icon>
+      Hacer foto
+    </ion-button>
+
+    <div *ngIf="foto" class="foto-wrapper">
+      <img [src]="foto" class="foto" />
+    </div>
+  </ion-card-content>
+</ion-card>
