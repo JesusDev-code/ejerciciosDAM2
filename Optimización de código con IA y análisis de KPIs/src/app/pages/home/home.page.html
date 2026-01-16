@@ -1,0 +1,38 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>Social B (Optimizado)</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+
+  <ion-item>
+    <ion-input placeholder="Buscar en posts..." [value]="query" (ionInput)="onInput($event)"></ion-input>
+  </ion-item>
+
+  <div style="background-color: #222428; color: #ffffff; padding: 15px; margin: 15px 0; border-radius: 8px; border: 2px solid #3880ff; font-size: 16px;">
+    <div>📊 Render items: <b style="color: #2dd36f; font-size: 18px;">{{ kpi.kpis.renderItems }}</b></div>
+    <div style="margin-top: 5px;">🔄 Subs activas: <b style="color: #2dd36f; font-size: 18px;">{{ kpi.kpis.activeSubscriptions }}</b></div>
+  </div>
+
+  <ion-note *ngIf="error" color="danger">{{ error }}</ion-note>
+
+  <ion-list *ngIf="displayedPosts.length > 0">
+    <ion-item *ngFor="let p of displayedPosts; trackBy: trackByFn" (click)="openPost(p)">
+      <ion-label class="ion-text-wrap">
+        <b>{{ prettyTitle(p) }}</b>
+        <div>{{ p.body }}</div>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+
+  <ion-infinite-scroll (ionInfinite)="loadNextPage($event)">
+    <ion-infinite-scroll-content loadingSpinner="bubbles" loadingText="Cargando más...">
+    </ion-infinite-scroll-content>
+  </ion-infinite-scroll>
+
+  <div style="display:flex; gap: 10px; margin-top: 16px;">
+    <ion-button expand="block" fill="outline" (click)="goSettings()">Ir a Métricas Detalladas</ion-button>
+  </div>
+
+</ion-content>

@@ -9,3 +9,4 @@ Aquí presento una colección de proyectos prácticos desarrollando competencias
 - 📁 [Aplicación web con IONIC + ANGULAR, calculadora y CRUD](./Aplicacion_ionic_angular_calculadora_CRUD/)
 - 📁 [Aplicación web de IONIC + ANGULAR con Spring Boot](./Aplicacion_ionic_angular_Spring_Boot/)
 - 📁 [Aplicación web con funcionalidades de GPS](./Aplicacion_web_GPS/)
+- 📁 [Organización de código con IA y análisis de KPIS](./Optimización%20de%20código%20con%20IA%20y%20análisis%20de%20KPIs/)
