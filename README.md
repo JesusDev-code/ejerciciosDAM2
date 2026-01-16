@@ -1,6 +1,6 @@
 # REPOSITORIO DE EJERCICIOS REALIZADOS EN 2º DE DAM
 
-Aquí presento una colección de proyectos prácticos desarrollando competencias en entornos nativos (Android), híbridos (Ionic) y Backend (Spring Boot).
+Aquí presento una colección de proyectos prácticos desarrollando competencias en entornos nativos (Android), híbridos (Ionic), Backend (Spring Boot) y redes.
 
 - 📁 [Aplicación Android con API de Google Maps](./Aplicacion_android_api_GoogleMaps/)
 - 📁 [Aplicación Android con conexión a Spring Boot](./Aplicacion_Android_con_conexion_Spring_Boot/)
