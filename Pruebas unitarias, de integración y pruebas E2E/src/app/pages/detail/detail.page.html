@@ -1,0 +1,73 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar style="--background: transparent;">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/tabs/home" icon="arrow-back" class="glass-back-btn"></ion-back-button>
+    </ion-buttons>
+    <ion-buttons slot="end">
+      <ion-button class="glass-icon-btn">
+        <ion-icon name="heart-outline"></ion-icon>
+      </ion-button>
+      <ion-button class="glass-icon-btn">
+        <ion-icon name="share-social-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" *ngIf="movie">
+  
+  <div class="backdrop-container">
+    <div class="backdrop-image" [style.backgroundImage]="'url(' + movie.backdrop + ')'"></div>
+    <div class="backdrop-gradient"></div>
+  </div>
+
+  <div class="detail-content">
+    
+    <h1 class="movie-title">{{ movie.title }}</h1>
+    
+    <div class="meta-row">
+      <div class="rating-badge">
+        <ion-icon name="star"></ion-icon> {{ movie.vote_average }}
+      </div>
+      <span class="meta-text">{{ movie.release_date | date:'yyyy' }}</span>
+      <span class="meta-dot">•</span>
+      <span class="meta-text" *ngFor="let g of movie.genres | slice:0:2">{{ g.name }}</span>
+    </div>
+
+   <div class="action-buttons">
+  <button class="play-btn">
+    <ion-icon name="play"></ion-icon>
+    Ver Ahora
+  </button>
+  
+  <button class="add-btn" (click)="toggleFavorite()">
+    <ion-icon [name]="isFav ? 'checkmark' : 'add'"></ion-icon>
+    {{ isFav ? 'En Lista' : 'Mi Lista' }}
+  </button>
+</div>
+
+    <div class="section">
+      <h3>Sinopsis</h3>
+      <p class="overview-text">{{ movie.overview }}</p>
+    </div>
+
+    <div class="section">
+      <h3>Reparto Principal</h3>
+      <div class="cast-scroll">
+        <div class="cast-member">
+          <div class="cast-avatar"></div>
+          <span>Actor 1</span>
+        </div>
+        <div class="cast-member">
+          <div class="cast-avatar"></div>
+          <span>Actor 2</span>
+        </div>
+        <div class="cast-member">
+          <div class="cast-avatar"></div>
+          <span>Actor 3</span>
+        </div>
+      </div>
+    </div>
+    
+  </div>
+</ion-content>

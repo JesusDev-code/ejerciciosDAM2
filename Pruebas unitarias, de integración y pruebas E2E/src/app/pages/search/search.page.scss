@@ -1,0 +1,43 @@
+ion-content {
+  --background: #0f1e23;
+}
+
+/* Estilo personalizado para el Searchbar de Ionic */
+.neon-searchbar {
+  --background: #18282e;
+  --color: white;
+  --icon-color: var(--ion-color-primary);
+  --placeholder-color: #888;
+  --border-radius: 12px;
+  padding: 10px 15px;
+}
+
+.center-msg {
+  height: 60vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #666;
+  p { margin-top: 10px; }
+}
+
+/* Grid de resultados */
+.poster-card {
+  border-radius: 8px;
+  overflow: hidden;
+  background: #18282e;
+  aspect-ratio: 2/3;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+  transition: transform 0.2s;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  &:active {
+    transform: scale(0.95);
+  }
+}

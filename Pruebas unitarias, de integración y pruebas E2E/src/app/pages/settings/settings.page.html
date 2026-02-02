@@ -1,0 +1,57 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar style="--background: #0f1e23;">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/tabs/profile" color="light"></ion-back-button>
+    </ion-buttons>
+    <ion-title style="font-weight: 800;">Ajustes</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content style="--background: #0f1e23;">
+  <ion-list class="neon-list">
+    
+    <ion-list-header>PREFERENCIAS</ion-list-header>
+    
+    <ion-item lines="none">
+      <div slot="start" class="icon-box blue">
+        <ion-icon name="notifications-outline"></ion-icon>
+      </div>
+      <ion-label>
+        <h2>Notificaciones</h2>
+        <p>Estrenos y avisos</p>
+      </ion-label>
+      
+      <ion-toggle 
+        slot="end" 
+        color="primary" 
+        [(ngModel)]="notificationsEnabled" 
+        (ionChange)="toggleNotifications($event)">
+      </ion-toggle>
+    </ion-item>
+
+    <ion-item lines="none">
+      <div slot="start" class="icon-box blue">
+        <ion-icon name="cloud-download-outline"></ion-icon>
+      </div>
+      <ion-label>Calidad Descarga</ion-label>
+      <ion-note slot="end">Alta (1080p)</ion-note>
+    </ion-item>
+
+    <div class="separator"></div>
+
+    <ion-list-header>SOPORTE</ion-list-header>
+
+    <ion-item lines="none" button>
+      <div slot="start" class="icon-box purple">
+        <ion-icon name="help-circle-outline"></ion-icon>
+      </div>
+      <ion-label>Centro de Ayuda</ion-label>
+      <ion-icon slot="end" name="chevron-forward-outline" color="medium"></ion-icon>
+    </ion-item>
+
+  </ion-list>
+  
+  <div class="version-info">
+    CineClub v4.2.0 (Build 2024)
+  </div>
+</ion-content>

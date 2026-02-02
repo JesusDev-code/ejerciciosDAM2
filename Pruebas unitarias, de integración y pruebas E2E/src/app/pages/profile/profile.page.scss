@@ -1,0 +1,142 @@
+/* Variables de tu diseño Neon */
+:host {
+  --primary: #06bcf9;
+  --bg-dark: #0f1e23;
+  --surface: #18282e;
+}
+
+ion-content {
+  --background: var(--bg-dark);
+}
+
+/* --- LOGIN FORM STYLES --- */
+.login-container {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.login-box {
+  width: 100%;
+  max-width: 320px;
+  text-align: center;
+  
+  h1 { font-weight: 800; font-size: 2rem; color: white; margin-bottom: 5px; }
+  p { color: #8899a6; margin-bottom: 30px; font-size: 0.9rem; }
+}
+
+.custom-input {
+  --background: var(--surface);
+  --color: white;
+  --border-radius: 12px;
+  margin-bottom: 15px;
+  --padding-start: 10px;
+  border: 1px solid rgba(255,255,255,0.05);
+}
+
+.login-btn {
+  margin-top: 20px;
+  --background: var(--primary);
+  --border-radius: 12px;
+  font-weight: bold;
+  --color: #000;
+}
+
+/* --- PROFILE DESIGN STYLES (Stitch 3) --- */
+.profile-container {
+  /* CORRECCIÓN: Aumentamos el padding inferior para que la barra de tabs flotante no tape el contenido */
+  padding-bottom: 100px;
+}
+
+.profile-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 40px 0 20px;
+  
+  h2 { font-size: 1.5rem; font-weight: 700; color: white; margin: 15px 0 5px; }
+}
+
+.avatar-container {
+  position: relative;
+  .avatar {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    background-size: cover;
+    background-position: center;
+    border: 4px solid var(--primary);
+    box-shadow: 0 0 20px rgba(6, 188, 249, 0.3);
+  }
+  .edit-badge {
+    position: absolute;
+    bottom: 0; right: 0;
+    background: var(--bg-dark);
+    border: 1px solid #333;
+    width: 30px; height: 30px;
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    color: var(--primary);
+  }
+}
+
+.user-tag {
+  display: flex; align-items: center; gap: 10px;
+  .pro-badge {
+    background: rgba(6, 188, 249, 0.15);
+    color: var(--primary);
+    font-size: 0.7rem; font-weight: 800;
+    padding: 2px 8px; border-radius: 10px;
+    border: 1px solid rgba(6, 188, 249, 0.3);
+  }
+  .handle { color: #888; font-size: 0.9rem; }
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 10px;
+  padding: 0 20px 20px;
+}
+
+.stat-card {
+  background: var(--surface);
+  border-radius: 12px;
+  padding: 15px;
+  display: flex; flex-direction: column; align-items: center;
+  border: 1px solid rgba(255,255,255,0.05);
+  
+  .stat-value { font-size: 1.3rem; font-weight: 700; color: white; }
+  .stat-value.highlight { color: var(--primary); }
+  .stat-label { font-size: 0.75rem; color: #888; margin-top: 4px; }
+}
+
+.menu-list {
+  padding: 0 20px;
+  h3 { font-size: 0.75rem; color: #666; font-weight: 700; margin: 20px 0 10px; letter-spacing: 1px; }
+}
+
+.menu-item {
+  width: 100%;
+  background: transparent;
+  display: flex; align-items: center; gap: 15px;
+  padding: 15px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+  
+  span { flex: 1; text-align: left; color: white; font-weight: 500; }
+  .arrow { color: #444; }
+  
+  .icon-box {
+    width: 40px; height: 40px;
+    border-radius: 10px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.2rem;
+    
+    &.pink { background: rgba(236, 72, 153, 0.1); color: #ec4899; }
+    &.blue { background: rgba(59, 130, 246, 0.1); color: #3b82f6; }
+    &.gray { background: rgba(255,255,255, 0.1); color: #ccc; }
+    &.red { background: rgba(239, 68, 68, 0.1); color: #ef4444; }
+  }
+}

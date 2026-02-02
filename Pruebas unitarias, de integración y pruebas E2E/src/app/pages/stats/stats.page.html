@@ -1,0 +1,54 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar style="--background: #0f1e23;">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/tabs/profile" color="light"></ion-back-button>
+    </ion-buttons>
+    <ion-title style="font-weight: 800;">Estadísticas</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" style="--background: #0f1e23;">
+  <div class="stats-container">
+    
+    <div class="cards-row">
+      <div class="stat-card">
+        <div class="icon-wrap blue">
+          <ion-icon name="time-outline"></ion-icon>
+        </div>
+        <span class="label">Tiempo Total</span>
+        <span class="value">142<small>h</small></span>
+      </div>
+
+      <div class="stat-card">
+        <div class="icon-wrap purple">
+          <ion-icon name="videocam-outline"></ion-icon>
+        </div>
+        <span class="label">Vistas este mes</span>
+        <span class="value">18</span>
+      </div>
+    </div>
+
+    <div class="chart-section">
+      <h2>Géneros Favoritos</h2>
+      <div class="chart-box">
+        <div class="bar-group">
+          <div class="bar" style="height: 80%; opacity: 1;"></div>
+          <span>Sci-Fi</span>
+        </div>
+        <div class="bar-group">
+          <div class="bar" style="height: 60%; opacity: 0.7;"></div>
+          <span>Acción</span>
+        </div>
+        <div class="bar-group">
+          <div class="bar" style="height: 40%; opacity: 0.5;"></div>
+          <span>Drama</span>
+        </div>
+        <div class="bar-group">
+          <div class="bar" style="height: 25%; opacity: 0.3;"></div>
+          <span>Comedia</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</ion-content>

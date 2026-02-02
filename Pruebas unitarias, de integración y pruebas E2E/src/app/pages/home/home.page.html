@@ -1,0 +1,53 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+    <ion-title color="light" style="font-weight: 800; letter-spacing: 1px;">
+      VIDEOCLUB<span style="color: var(--ion-color-primary);">NEON</span>
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+
+  <div *ngIf="loading" class="spinner-container">
+    <ion-spinner name="crescent" color="primary"></ion-spinner>
+  </div>
+
+  <div *ngIf="!loading && featuredMovie">
+    
+    <div class="hero-banner" [style.backgroundImage]="'linear-gradient(to top, #0a0a0a, transparent 50%), url(' + featuredMovie.poster + ')'">
+      <div class="hero-content">
+        <div class="hero-meta">2024 • Sci-Fi / Adventure</div>
+        <h1>{{ featuredMovie.title }}</h1>
+        <div class="hero-buttons">
+          <button class="btn-primary" (click)="playMovie()">
+            <ion-icon name="play"></ion-icon> Reproducir
+          </button>
+          <button class="btn-secondary" (click)="goToDetail(featuredMovie)">
+            <ion-icon name="information-circle-outline"></ion-icon> Más Info
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="content-section">
+      <h2>Tendencias Ahora</h2>
+      <div class="movie-carousel">
+        <div class="movie-card" *ngFor="let movie of trendingMovies" (click)="goToDetail(movie)">
+          <img [src]="movie.poster" [alt]="movie.title">
+        </div>
+      </div>
+    </div>
+
+    <div class="content-section">
+      <h2>Nuevos Lanzamientos</h2>
+      <div class="movie-carousel">
+        <div class="movie-card" *ngFor="let movie of trendingMovies.reverse()" (click)="goToDetail(movie)">
+          <img [src]="movie.poster" [alt]="movie.title">
+        </div>
+      </div>
+    </div>
+
+    <div style="height: 80px;"></div>
+
+  </div>
+</ion-content>

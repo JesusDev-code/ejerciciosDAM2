@@ -1,0 +1,43 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar style="--background: #0f1e23; border-bottom: 1px solid rgba(255,255,255,0.05);">
+    <ion-title style="font-weight: 800; letter-spacing: 0.5px;">Mi Lista</ion-title>
+    <ion-buttons slot="end">
+      <ion-button>
+        <ion-icon name="search-outline" color="light"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" style="--background: #0f1e23;">
+  
+  <div class="filters-container">
+    <div class="chip active">Todo</div>
+    <div class="chip">Películas</div>
+    <div class="chip">Series</div>
+  </div>
+
+  <div *ngIf="favorites.length === 0" class="empty-state">
+    <ion-icon name="heart-dislike-outline"></ion-icon>
+    <p>Aún no tienes favoritos</p>
+  </div>
+
+  <ion-grid class="ion-no-padding" *ngIf="favorites.length > 0">
+    <ion-row>
+      <ion-col size="6" size-md="4" size-lg="3" *ngFor="let movie of favorites">
+        <div class="movie-card" (click)="remove(movie)"> <img [src]="movie.poster" class="poster-img" />
+          
+          <div class="card-overlay">
+            <h3 class="movie-title">{{ movie.title }}</h3>
+            <p class="movie-meta">Nota: {{ movie.vote_average }}</p>
+          </div>
+
+          <div class="neon-heart">
+            <ion-icon name="heart"></ion-icon>
+          </div>
+
+        </div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

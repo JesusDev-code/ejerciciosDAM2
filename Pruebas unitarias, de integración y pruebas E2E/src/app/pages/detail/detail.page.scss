@@ -1,0 +1,149 @@
+ion-content {
+  --background: #0f1e23;
+}
+
+/* Header transparente */
+.glass-back-btn, .glass-icon-btn {
+  color: white;
+  background: rgba(0,0,0,0.3);
+  backdrop-filter: blur(10px);
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  margin: 0 5px;
+  --icon-font-size: 20px;
+}
+
+/* Imagen de fondo */
+.backdrop-container {
+  position: relative;
+  width: 100%;
+  height: 55vh; /* Ocupa más de la mitad de pantalla */
+}
+
+.backdrop-image {
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+}
+
+.backdrop-gradient {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: linear-gradient(to bottom, transparent 0%, #0f1e23 90%);
+}
+
+/* Contenido */
+.detail-content {
+  padding: 20px;
+  margin-top: -60px; /* Sube sobre el gradiente */
+  position: relative;
+  z-index: 10;
+}
+
+.movie-title {
+  font-size: 2.2rem;
+  font-weight: 800;
+  color: white;
+  margin-bottom: 10px;
+  line-height: 1.1;
+  text-shadow: 0 2px 10px rgba(0,0,0,0.5);
+}
+
+.meta-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 25px;
+  color: #ccc;
+  font-size: 0.9rem;
+}
+
+.rating-badge {
+  background: rgba(255, 215, 0, 0.15);
+  color: #ffd700;
+  padding: 4px 8px;
+  border-radius: 8px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  border: 1px solid rgba(255, 215, 0, 0.3);
+}
+
+.meta-dot { color: #555; }
+
+/* Botones Neon */
+.action-buttons {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 30px;
+}
+
+.play-btn {
+  flex: 2;
+  background: var(--ion-color-primary);
+  color: #000;
+  border: none;
+  border-radius: 12px;
+  height: 50px;
+  font-weight: 800;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  box-shadow: 0 0 20px rgba(6, 188, 249, 0.4); /* Glow azul */
+}
+
+.add-btn {
+  flex: 1;
+  background: rgba(255,255,255,0.1);
+  color: white;
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 12px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+/* Secciones */
+.section {
+  margin-bottom: 30px;
+  
+  h3 {
+    color: white;
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+    letter-spacing: 0.5px;
+  }
+}
+
+.overview-text {
+  color: #aab;
+  line-height: 1.6;
+  font-size: 0.95rem;
+}
+
+/* Cast ficticio */
+.cast-scroll {
+  display: flex;
+  gap: 15px;
+  overflow-x: auto;
+}
+.cast-member {
+  text-align: center;
+  width: 70px;
+  span { font-size: 0.75rem; color: #ccc; }
+}
+.cast-avatar {
+  width: 60px; height: 60px;
+  background: #333;
+  border-radius: 50%;
+  margin-bottom: 5px;
+  border: 2px solid rgba(255,255,255,0.1);
+}

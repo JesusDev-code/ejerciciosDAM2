@@ -1,0 +1,99 @@
+<ion-content [fullscreen]="true">
+  
+  <div *ngIf="!user" class="login-container">
+    <div class="login-box">
+      <h1>Únete al Club</h1>
+      <p>Guarda tus favoritas y mira tus estadísticas.</p>
+
+      <div class="input-group">
+        <ion-item class="custom-input">
+          <ion-icon slot="start" name="person" color="primary"></ion-icon>
+          <ion-input [(ngModel)]="loginData.username" placeholder="Nombre de usuario"></ion-input>
+        </ion-item>
+        
+        <ion-item class="custom-input">
+          <ion-icon slot="start" name="mail" color="primary"></ion-icon>
+          <ion-input [(ngModel)]="loginData.email" placeholder="Correo electrónico"></ion-input>
+        </ion-item>
+
+        <ion-item class="custom-input">
+          <ion-icon slot="start" name="lock-closed" color="primary"></ion-icon>
+          <ion-input type="password" [(ngModel)]="loginData.password" placeholder="Contraseña"></ion-input>
+        </ion-item>
+      </div>
+
+      <ion-button expand="block" class="login-btn" (click)="onLogin()">
+        Entrar / Registrarse
+      </ion-button>
+    </div>
+  </div>
+
+  <div *ngIf="user" class="profile-container">
+    
+    <section class="profile-header">
+      <div class="avatar-container">
+        <div class="avatar" [style.backgroundImage]="'url(' + (user.avatar || 'assets/user.png') + ')'"></div>
+        <div class="edit-badge">
+          <ion-icon name="create-outline"></ion-icon>
+        </div>
+      </div>
+      <h2>{{ user.username }}</h2>
+      <div class="user-tag">
+        <span class="pro-badge">PRO MEMBER</span>
+        <span class="handle">{{ '@' + user.username.toLowerCase() }}</span>
+      </div>
+    </section>
+
+    <section class="stats-grid">
+      <div class="stat-card">
+        <span class="stat-value">142</span>
+        <span class="stat-label">Vistas</span>
+      </div>
+      <div class="stat-card">
+        <span class="stat-value highlight">480h</span>
+        <span class="stat-label">Horas</span>
+      </div>
+      <div class="stat-card">
+        <span class="stat-value">23</span>
+        <span class="stat-label">Listas</span>
+      </div>
+    </section>
+
+    <div class="menu-list">
+      <h3>MI LIBRERÍA</h3>
+      
+      <button class="menu-item" routerLink="/tabs/favorites">
+        <div class="icon-box pink">
+          <ion-icon name="heart"></ion-icon>
+        </div>
+        <span>Favoritos</span>
+        <ion-icon name="chevron-forward" class="arrow"></ion-icon>
+      </button>
+
+      <button class="menu-item" routerLink="/tabs/stats">
+        <div class="icon-box blue">
+          <ion-icon name="stats-chart"></ion-icon>
+        </div>
+        <span>Estadísticas</span>
+        <ion-icon name="chevron-forward" class="arrow"></ion-icon>
+      </button>
+
+      <h3>CUENTA</h3>
+
+      <button class="menu-item" routerLink="/settings"> <div class="icon-box gray">
+        <ion-icon name="settings"></ion-icon>
+       </div>
+          <span>Ajustes</span>
+        <ion-icon name="chevron-forward" class="arrow"></ion-icon>
+      </button>
+
+      <button class="menu-item logout" (click)="onLogout()">
+        <div class="icon-box red">
+          <ion-icon name="log-out"></ion-icon>
+        </div>
+        <span>Cerrar Sesión</span>
+      </button>
+    </div>
+
+  </div>
+</ion-content>
